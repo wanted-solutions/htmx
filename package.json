@@ -1,0 +1,7 @@
+{
+    "name": "@wanted/htmx",
+    "version": "0.1.0",
+    "dependencies": {
+        "htmx.org": "^1.9.11"
+    }
+}

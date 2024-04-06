@@ -19,3 +19,13 @@
 
 # Go workspace file
 go.work
+
+# Binaries
+bin
+
+# Node objects
+node_modules
+dist
+
+# Local development files
+.env
