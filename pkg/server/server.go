@@ -42,6 +42,7 @@ func (e *Engine) GET(relativePath string, handlers ...gin.HandlerFunc) {
 // Public functions
 func (e *Engine) ListenAndServe(addr string) error {
 	e.createHTTPServer(addr)
+	e.handler.LoadHTMLFiles(GetTemplates()...)
 	return e.server.ListenAndServe()
 }
 
