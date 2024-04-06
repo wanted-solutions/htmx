@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 var templates = make([]string, 0)
@@ -14,7 +15,7 @@ func LoadTemplates(pattern ...string) {
 			if err != nil {
 				return err
 			}
-			if !info.IsDir() {
+			if !info.IsDir() && strings.HasSuffix(info.Name(), ".html") {
 				templates = append(templates, path)
 			}
 			return nil
