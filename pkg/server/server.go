@@ -27,6 +27,10 @@ func (e *Engine) LoadTemplates(pattern string) {
 	e.handler.LoadHTMLGlob(pattern)
 }
 
+func (e *Engine) GET(relativePath string, handlers ...gin.HandlerFunc) {
+	e.handler.GET(relativePath, handlers...)
+}
+
 // Public functions
 func (e *Engine) ListenAndServe(addr string) error {
 	e.createHTTPServer(addr)
