@@ -27,6 +27,10 @@ func (e *Engine) LoadTemplates(pattern string) {
 	e.handler.LoadHTMLGlob(pattern)
 }
 
+func (e *Engine) Static(relativePath, root string) {
+	e.handler.Static(relativePath, root)
+}
+
 func (e *Engine) GET(relativePath string, handlers ...gin.HandlerFunc) {
 	e.handler.GET(relativePath, handlers...)
 }
