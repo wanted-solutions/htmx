@@ -23,8 +23,12 @@ func (e *Engine) Use(middleware ...gin.HandlerFunc) {
 	e.handler.Use(middleware...)
 }
 
-func (e *Engine) LoadTemplates(pattern string) {
+func (e *Engine) LoadComponents(pattern string) {
 	e.handler.LoadHTMLGlob(pattern)
+}
+
+func (e *Engine) LoadTemplates(pattern ...string) {
+	e.handler.LoadHTMLFiles(pattern...)
 }
 
 func (e *Engine) Static(relativePath, root string) {
